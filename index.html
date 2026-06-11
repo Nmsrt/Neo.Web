@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal site of Neo — projects, writing, links." />
+    <title>NEO.DEV — personal site</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+    <div class="wrap">
+      <header class="banner">
+        <h1 class="site-title glitch" data-text="NEO">NEO</h1>
+      </header>
+
+      <div class="columns">
+        <main class="main-col">
+          <!-- HERO -->
+          <section class="hero" id="hero">
+            <h2 class="section-title welcome-title">✦ Welcome to NEO.DEV! ✦</h2>
+            <span class="avatar">
+              <img src="assets/avatar.svg" width="96" height="96" alt="pixel avatar">
+            </span>
+            
+            <p>
+              This is my little website I created on June 11, 2026.
+            </p>
+            <p>
+              Programming is my thing..... building small stuff for the internet
+              and tinkering with it until it feels just right. If you want the
+              serious version of me, my professional site is
+              <a href="https://github.com/Nmsrt/Professional-Portfolio">here</a>.
+            </p>
+            <p>
+              When I'm not writing code, you'll probably catch me doing one of
+              these instead:
+            </p>
+            <ul class="hobby-list">
+              <li>⚽ <strong>Football</strong> </li>
+              <li>🥁 <strong>Drumming</strong> </li>
+              <li>🎮 <strong>Gaming</strong> </li>
+            </ul>
+            <p>
+              Studying at <strong>De La Salle University</strong>, where most of my
+              projects (and most of my sleep deprivation) come from.
+            </p>
+            <p>
+              Most of the time you'll just find me in a discord
+              call with friends, half-working, half-laughing, half-tweaking ☾
+            </p>
+            <div class="clearfix"></div>
+          </section>
+
+          <!-- marquee separator -->
+          <div class="marquee section-marquee" aria-hidden="true">
+            <span>
+              ★ advertisement ★ talk to me anytime, anywhere ★ my inbox never sleeps ★
+              dm me, mail me, ping me — I'll answer ★
+            </span>
+          </div>
+
+          <!-- BLOG -->
+          <section id="blog">
+            <h2 class="section-title">Blog</h2>
+            <ul class="blog-list" aria-label="blog posts coming soon">
+              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
+              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
+              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
+              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
+              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
+            </ul>
+            <p class="tiny">5 post slots reserved — first entries loading… check back soon ☾</p>
+          </section>
+
+          <!-- ad separator: valorant -->
+          <div class="ad-sep ad-valorant" aria-label="advertisement — Valorant">
+            <svg class="ad-art ad-art-left" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M10 15 L45 85 L55 85 L90 15 L70 15 L50 55 L30 15 Z" fill="#ff4655" />
+            </svg>
+            <svg class="ad-art ad-art-right" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M10 15 L45 85 L55 85 L90 15 L70 15 L50 55 L30 15 Z" fill="#ece8e1" />
+            </svg>
+            <span class="ad-sep-label">advertisement</span>
+            <span class="ad-sep-title">VALORANT</span>
+            <span class="ad-sep-tag">Lock in. Play free.</span>
+            <a class="ad-cta" href="https://playvalorant.com">▶ PLAY FREE</a>
+          </div>
+
+          <!-- STATUS -->
+          <section id="status">
+            <h2 class="section-title">Status</h2>
+            <div class="status-board">
+              <p class="status-line">Systems status: <span class="status-tag ok">OK</span></p>
+              <ul class="status-list">
+                <li class="status-item"><span class="status-tag ok">[ OK ]</span> site</li>
+                <li class="status-item"><span class="status-tag ok">[ OK ]</span> server</li>
+                <li class="status-item"><span class="status-tag ok">[ OK ]</span> guestbook</li>
+                <li class="status-item"><span class="status-tag warn">[ -- ]</span> webring</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ad separator: 2026 fifa world cup -->
+          <div class="ad-sep ad-worldcup" aria-label="advertisement — 2026 FIFA World Cup">
+            <svg class="ad-art ad-art-left" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="29" fill="#fff" />
+              <polygon points="32,19 44,28 39,42 25,42 20,28" fill="#15231a" />
+              <path d="M32 3v16M44 28l16-7M39 42l11 13M25 42L14 55M20 28L4 21" stroke="#15231a" stroke-width="3" fill="none" />
+            </svg>
+            <svg class="ad-art ad-art-right" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="29" fill="#fff" />
+              <polygon points="32,19 44,28 39,42 25,42 20,28" fill="#15231a" />
+              <path d="M32 3v16M44 28l16-7M39 42l11 13M25 42L14 55M20 28L4 21" stroke="#15231a" stroke-width="3" fill="none" />
+            </svg>
+            <span class="ad-sep-label">advertisement</span>
+            <span class="ad-sep-title">2026 FIFA WORLD CUP</span>
+            <span class="ad-sep-dates">JUNE 11 – JULY 19, 2026 · CANADA · MEXICO · USA</span>
+            <span class="ad-sep-tag">The world is watching.</span>
+            <a class="ad-cta" href="https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026">⚽ FOLLOW THE CUP</a>
+          </div>
+
+          <!-- SHOWCASE -->
+          <section id="showcase">
+            <h2 class="section-title">Showcase</h2>
+            <div class="showcase-entry">
+              <div class="showcase-img">
+                <img src="assets/dinosaur.jpg" width="320" height="200" alt="showcase placeholder one" />
+              </div>
+              <div class="showcase-text">
+                <h3>JAY NO JOR</h3>
+                <p>
+                  RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ad separator: discord -->
+          <div class="ad-sep ad-discord" aria-label="advertisement — Discord community">
+            <svg class="ad-art ad-art-left" viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="6" y="10" width="52" height="34" rx="10" fill="#fff" />
+              <path d="M22 44 L14 58 L34 44 Z" fill="#fff" />
+              <circle cx="22" cy="27" r="4" fill="#5865f2" />
+              <circle cx="32" cy="27" r="4" fill="#5865f2" />
+              <circle cx="42" cy="27" r="4" fill="#5865f2" />
+            </svg>
+            <svg class="ad-art ad-art-right" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 6 L38 24 L56 24 L42 36 L47 54 L32 43 L17 54 L22 36 L8 24 L26 24 Z" fill="#fff" />
+            </svg>
+            <span class="ad-sep-label">advertisement</span>
+            <span class="ad-sep-title">DISCORD</span>
+            <span class="ad-sep-tag">Join our community</span>
+            <a class="ad-cta" href="https://discord.gg/ex57agxdq">JOIN SERVER</a>
+          </div>
+
+        </main>
+
+        <aside class="side-col">
+          <section class="nav-box">
+            <h2 class="section-title">Nav</h2>
+            <nav aria-label="Site navigation">
+              <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="pages/projects.html">Projects</a></li>
+                <li><a href="pages/experience.html">Experience</a></li>
+                <li><a href="pages/skills.html">Skills</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="guestbook.html">Guestbook</a></li>
+                <li><a href="https://github.com/Nmsrt">GitHub</a></li>
+              </ul>
+            </nav>
+          </section>
+
+          <section class="online-box">
+            <h2 class="section-title">Status</h2>
+            <p class="online-dot">● ONLINE</p>
+          </section>
+
+          <section class="counter-box">
+            <h2 class="section-title">Visitors</h2>
+            <div class="counter" aria-label="visitor counter">
+              <span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span>
+            </div>
+            <p class="tiny">counting…</p>
+          </section>
+
+          <section class="mybutton-box">
+            <h2 class="section-title">My button</h2>
+            <img class="my-88x31" src="assets/button.svg" width="88" height="31" alt="NEO.DEV 88x31 button" />
+            <p class="tiny">link me!</p>
+            <textarea class="embed-code" rows="3" readonly
+              onclick="this.select()">&lt;a href="https://neodev.neocities.org"&gt;&lt;img src="https://neodev.neocities.org/button.svg" width="88" height="31" alt="NEO.DEV"&gt;&lt;/a&gt;</textarea>
+          </section>
+
+          <section class="construction-box">
+            <h2 class="section-title">WIP</h2>
+            <div class="construction-bar" aria-hidden="true"></div>
+            <p class="tiny construction-text">🚧 UNDER CONSTRUCTION 🚧</p>
+            <div class="construction-bar" aria-hidden="true"></div>
+            <p class="tiny">last updated: 2026-06-11</p>
+          </section>
+
+          <section class="badge-box">
+            <p class="tiny">
+              best viewed at 1024x768<br />
+              in netscape navigator 4.0<br />
+              (or any browser, really)
+            </p>
+          </section>
+        </aside>
+      </div>
+
+      <footer>
+        <p>(c) 2026 Neo · all rights reserved · goodnight ☾</p>
+        <p><a href="mailto:neo.monserrat@gmail.com">neo.monserrat@gmail.com</a></p>
+        <p class="webring">[ ← prev ] [ webring coming soon ] [ next → ]</p>
+      </footer>
+    </div>
+
+    <div class="settings-bar" role="group" aria-label="Site settings">
+      <span class="settings-label">settings:</span>
+      <label class="settings-option">
+        <input type="checkbox" id="setting-theme" />
+        <span>dark mode</span>
+      </label>
+      <label class="settings-option">
+        <input type="checkbox" id="setting-rain" />
+        <span>rain</span>
+      </label>
+    </div>
+
+    <script src="js/rain.js"></script>
+    <script src="js/counter.js"></script>
+  </body>
+</html>

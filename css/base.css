@@ -1,0 +1,294 @@
+/* ============================================
+   base: fonts, variables, resets, typography,
+   animations
+   ============================================ */
+
+@font-face {
+  font-family: "NEC_APC3";
+  src: url("/fonts/pixelfonts/Web437_NEC_APC3_8x16.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NEC_APC3";
+  src: url("/fonts/pixelfonts/Web437_Nix8810_M16.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RussianGothic";
+  src: local("Arial");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0420-42FF;
+}
+
+:root {
+  --bg: #f5f0e8;
+  --bg-panel: #efe9dc;
+  --bg-panel-alt: #e8e0cf;
+  --text: #0d0d0d;
+  --text-dim: #6b6660;
+  --accent: #9e1b32;
+  --accent-dim: #7c1226;
+  --magenta: #0d0d0d;
+  --ok: #2d8a50;
+  --warn: #c4860a;
+  --border: #d9d1bf;
+  --border-bright: #c2b9a4;
+  --box-border: #e2dac9;
+  --box-title-bg: rgba(245, 240, 232, 0.97);
+
+  --rain-color: rgba(158, 27, 50, 0.14);
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-body: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;
+
+  --page-max: 980px;
+  --side-col-w: 190px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: var(--accent-dim) var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--box-border);
+  border: 1px solid var(--accent-dim);
+}
+
+body {
+  margin: 0;
+  padding-bottom: 34px; /* room for fixed settings bar */
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.35;
+  image-rendering: pixelated;
+}
+
+/* light mode: aged map — faint topographic contour rings over parchment.
+   Two charcoal ring systems centered off-canvas plus one whisper-faint
+   crimson system tied to the site accent; static, vibes only. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 12% 18%,
+      transparent 0 42px, rgba(85, 70, 50, 0.055) 42px 44px),
+    repeating-radial-gradient(circle at 88% 82%,
+      transparent 0 52px, rgba(85, 70, 50, 0.045) 52px 54px),
+    repeating-radial-gradient(circle at 70% -15%,
+      transparent 0 64px, rgba(158, 27, 50, 0.04) 64px 66px),
+    radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(120, 95, 55, 0.10) 100%),
+    radial-gradient(60% 50% at 85% 10%, rgba(200, 170, 110, 0.08), transparent 70%),
+    radial-gradient(55% 45% at 10% 90%, rgba(190, 160, 100, 0.07), transparent 70%);
+}
+
+body::after {
+  content: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-pixel);
+  color: var(--accent);
+  font-weight: normal;
+  line-height: 1.5;
+  text-shadow: none;
+}
+
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1rem; margin: 0 0 1rem; }
+h3 { font-size: 0.8rem; color: var(--accent); }
+
+h2.section-title::before {
+  content: '☾ ';
+  color: var(--accent-dim);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.nav-box a,
+.btn-88x31 {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--bg);
+  background: var(--accent);
+  text-shadow: none;
+}
+
+code {
+  background: var(--bg-panel-alt);
+  border: 1px solid var(--border);
+  padding: 0 4px;
+  font-family: var(--font-body);
+  color: var(--accent-dim);
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: var(--magenta);
+  text-shadow: none;
+  animation: glitch-a 2.6s steps(2, jump-none) infinite;
+}
+
+.glitch::after {
+  color: var(--accent);
+  text-shadow: none;
+  animation: glitch-b 3.1s steps(2, jump-none) infinite;
+}
+
+@keyframes glitch-a {
+  0%, 88%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+  90%  { clip-path: inset(15% 0 60% 0); transform: translate(-3px, 0); }
+  92%  { clip-path: inset(60% 0 10% 0); transform: translate(3px, 0); }
+  94%  { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 1px); }
+  96%  { clip-path: inset(0 0 100% 0); transform: none; }
+}
+
+@keyframes glitch-b {
+  0%, 84%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+  86% { clip-path: inset(70% 0 5% 0); transform: translate(3px, 0); }
+  88% { clip-path: inset(10% 0 75% 0); transform: translate(-3px, -1px); }
+  90% { clip-path: inset(100% 0 0 0); transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch::before,
+  .glitch::after,
+  .marquee span,
+  .construction-bar,
+  .online-dot,
+  .blink,
+  body::before,
+  .status-dot {
+    animation: none;
+  }
+  .glitch::before,
+  .glitch::after {
+    content: none;
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes stripes {
+  to { background-position: 23px 0; }
+}
+
+/* ============================================
+   dark mode overrides
+   ============================================ */
+
+[data-theme="dark"] {
+  --bg: #0a0a0f;
+  --bg-panel: #0d0d14;
+  --bg-panel-alt: #101018;
+  --text: #d0d0d0;
+  --text-dim: #8a8a96;
+  --accent: #7df9ff;
+  --accent-dim: #3ec6cc;
+  --magenta: #ff4df3;
+  --ok: #6dff8a;
+  --warn: #ffd86d;
+  --border: #2a2a3a;
+  --border-bright: #44445c;
+  --box-border: #1d5054;
+  --box-title-bg: rgba(7, 24, 28, 0.75);
+  --rain-color: rgba(125, 249, 255, 0.18);
+}
+
+/* dark mode: deep space starfield (staggered tile sizes so no grid reads) */
+[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 21% 13%, rgba(255, 255, 255, 0.85) 0.6px, transparent 1.4px) 0 0 / 163px 157px repeat,
+    radial-gradient(circle at 74% 62%, rgba(255, 255, 255, 0.55) 0.5px, transparent 1.2px) 43px 67px / 197px 211px repeat,
+    radial-gradient(circle at 48% 87%, rgba(255, 255, 255, 0.35) 0.5px, transparent 1.1px) 81px 23px / 229px 181px repeat,
+    radial-gradient(circle at 12% 53%, rgba(125, 249, 255, 0.5) 0.7px, transparent 1.6px) 27px 97px / 251px 239px repeat,
+    radial-gradient(circle at 86% 28%, rgba(255, 77, 243, 0.4) 0.7px, transparent 1.6px) 101px 41px / 283px 269px repeat,
+    linear-gradient(180deg, #0b0b18 0%, #06060d 55%, #080812 100%);
+  background-attachment: fixed;
+}
+
+/* dark mode: aurora ribbons drifting over the stars */
+[data-theme="dark"] body::before {
+  content: '';
+  position: fixed;
+  inset: -30%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(52% 30% at 28% 18%, rgba(125, 249, 255, 0.10), transparent 70%),
+    radial-gradient(46% 26% at 72% 30%, rgba(255, 77, 243, 0.07), transparent 70%),
+    radial-gradient(60% 34% at 50% 8%, rgba(90, 120, 255, 0.09), transparent 70%),
+    radial-gradient(40% 24% at 15% 70%, rgba(60, 220, 180, 0.06), transparent 70%);
+  filter: blur(52px);
+  animation: aurora-drift 28s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift {
+  from { transform: translate3d(-3%, -2%, 0) rotate(-1.5deg) scale(1); opacity: 0.75; }
+  to   { transform: translate3d(3%, 2%, 0) rotate(1.5deg) scale(1.08); opacity: 1; }
+}
+
+[data-theme="dark"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.16) 0 1px,
+    transparent 1px 3px
+  );
+  z-index: 5;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  text-shadow: 0 0 6px rgba(125, 249, 255, 0.35);
+}

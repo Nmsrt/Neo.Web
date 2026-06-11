@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31" width="88" height="31" shape-rendering="crispEdges" role="img" aria-label="NEO.DEV 88x31 button">
+  <rect width="88" height="31" fill="#0a0a0f"/>
+  <rect x="0.5" y="0.5" width="87" height="30" fill="none" stroke="#7df9ff"/>
+  <rect x="2.5" y="2.5" width="83" height="26" fill="none" stroke="#1d5054"/>
+  <text x="44" y="14" text-anchor="middle" fill="#7df9ff" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="1">NEO.DEV</text>
+  <text x="44" y="26" text-anchor="middle" fill="#3ec6cc" font-family="monospace" font-size="8">☾ neo ☽</text>
+</svg>

@@ -1,0 +1,203 @@
+/* ============================================
+   responsive: fluid layout, breakpoints,
+   fluid typography, touch-friendly targets
+
+   breakpoints:
+     mobile   ≤ 480px
+     tablet   481px – 768px
+     desktop  ≥ 769px (base styles)
+   ============================================ */
+
+/* ---- fluid typography (all sizes) ---- */
+
+body {
+  font-size: clamp(15px, 1vw + 11px, 17px);
+}
+
+.site-title {
+  font-size: clamp(2.2rem, 9vw, 4.5rem);
+}
+
+h1 { font-size: clamp(1.1rem, 3vw, 1.4rem); }
+h2 { font-size: clamp(0.85rem, 2.5vw, 1rem); }
+
+.page-404 .site-title {
+  font-size: clamp(1.8rem, 10vw, 2.6rem);
+}
+
+/* ---- tablet and below (≤ 768px) ---- */
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 8px;
+  }
+
+  /* collapse to a single fluid column; sidebar boxes
+     reflow into a grid of cards below the main column */
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .side-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 8px;
+  }
+
+  .side-col section {
+    margin-bottom: 0;
+  }
+
+  /* showcase: image stacks above text */
+  .showcase-entry {
+    flex-direction: column;
+  }
+
+  .showcase-img {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* touch-friendly tap targets (≥ 44px) */
+  .nav-box li {
+    margin: 0;
+  }
+
+  .nav-box a {
+    display: block;
+    padding: 13px 8px;
+  }
+
+  .rain-toggle,
+  .theme-toggle {
+    min-height: 44px;
+  }
+
+  .settings-bar {
+    left: 0;
+    right: 0;
+    transform: none;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .settings-option {
+    min-height: 44px;
+    padding: 0 6px;
+  }
+
+  .settings-option input {
+    width: 20px;
+    height: 20px;
+  }
+
+  body {
+    padding-bottom: 54px; /* taller settings bar */
+  }
+
+  footer a {
+    display: inline-block;
+    padding: 10px 6px;
+  }
+
+  .embed-code {
+    font-size: 13px;
+  }
+}
+
+/* ---- mobile (≤ 480px) ---- */
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 6px;
+  }
+
+  /* each major section fills the viewport; content
+     vertically centered, grows past 100svh if taller */
+  .main-col > section {
+    min-height: 100vh;  /* fallback */
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* sidebar cards go single column */
+  .side-col {
+    grid-template-columns: 1fr;
+  }
+
+  .marquee {
+    font-size: 13px;
+  }
+
+  .banner {
+    padding: 10px 6px;
+  }
+
+  /* hero avatar: float dies inside flex section — center it */
+  .hero .avatar {
+    float: none;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+  }
+
+  .hero .avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .counter span {
+    font-size: 12px;
+    padding: 5px 6px;
+  }
+
+  .exp-item {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .exp-year {
+    min-width: 0;
+  }
+
+  .contact-table td {
+    padding: 10px 6px 10px 0;
+  }
+
+  /* ad separators: tighter board, art fades to background */
+  .ad-sep {
+    padding: 12px 10px;
+  }
+
+  .ad-art {
+    width: 44px;
+    height: 44px;
+    opacity: 0.18;
+  }
+
+  .showcase-img {
+    max-width: none;
+  }
+}
+
+/* ---- coarse pointers (touch devices, any width) ---- */
+
+@media (pointer: coarse) {
+  .rain-toggle,
+  .theme-toggle {
+    min-height: 44px;
+  }
+
+  .settings-option {
+    min-height: 44px;
+  }
+
+  .settings-option input {
+    width: 20px;
+    height: 20px;
+  }
+}

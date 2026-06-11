@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 — NEO.DEV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+    <div class="wrap">
+      <main>
+        <section class="page-404">
+          <h1 class="site-title glitch" data-text="404">404</h1>
+          <p class="banner-sub">page not found</p>
+
+          <pre class="ascii-404" aria-hidden="true">
+        ☾
+   ✦         ✧
+      you have wandered
+      off the map, traveler
+   ✧         ✦
+        ✩</pre>
+
+          <p>
+            This page got lost in the rain. It may have moved, or it may have
+            never existed at all.
+          </p>
+          <p>
+            <a href="index.html">← take me home</a>
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <p>(c) 2026 Neo · all rights reserved · goodnight ☾</p>
+      </footer>
+    </div>
+
+    <button class="theme-toggle" id="theme-toggle" type="button"
+      style="position:fixed;top:10px;right:10px;z-index:100;">☾ dark</button>
+    <script src="js/rain.js"></script>
+  </body>
+</html>

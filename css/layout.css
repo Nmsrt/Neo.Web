@@ -1,0 +1,412 @@
+/* ============================================
+   layout: wrap, banner, columns, sidebar, nav,
+   section panels, responsive
+   ============================================ */
+
+.wrap {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner {
+  text-align: center;
+  padding: 14px 8px;
+  margin-bottom: 6px;
+  border: none;
+  background: transparent;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 4.5rem;
+  letter-spacing: 0.25em;
+  text-shadow: none;
+}
+
+
+.marquee {
+  overflow: hidden;
+  border: 1px solid var(--box-border);
+  background: var(--bg-panel);
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.marquee span {
+  display: inline-block;
+  padding: 2px 0;
+  animation: marquee 18s linear infinite;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr var(--side-col-w);
+  gap: 6px;
+  align-items: start;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* let grid tracks shrink below content min-width
+   (nowrap marquee text otherwise widens the page) */
+.main-col,
+.side-col {
+  min-width: 0;
+}
+
+.side-col section {
+  margin-bottom: 6px;
+}
+
+.nav-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-box li {
+  margin: 5px 0;
+}
+
+.nav-box li::before {
+  content: '✩ ';
+  color: var(--accent-dim);
+}
+
+.nav-box a {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+}
+
+.online-dot {
+  margin: 0;
+  color: var(--ok);
+  font-size: 13px;
+  animation: blink 2s steps(1) infinite;
+}
+
+.counter {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.counter span {
+  background: var(--bg-panel-alt);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  padding: 3px 4px;
+}
+
+.tiny {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.badge-box {
+  text-align: center;
+}
+
+.mybutton-box {
+  text-align: center;
+}
+
+.my-88x31 {
+  display: block;
+  margin: 0 auto 4px;
+  image-rendering: pixelated;
+}
+
+.construction-box {
+  text-align: center;
+}
+
+.construction-bar {
+  height: 8px;
+  margin: 4px 0;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--warn) 0 8px,
+    #111 8px 16px
+  );
+  animation: stripes 1.2s linear infinite;
+}
+
+.construction-text {
+  color: var(--warn);
+}
+
+.rain-toggle,
+.theme-toggle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background: var(--bg-panel-alt);
+  color: var(--text);
+  border: 1px solid var(--border-bright);
+  padding: 4px 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.rain-toggle:hover,
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* fixed settings bar at the bottom of the page */
+.settings-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 5px 14px;
+  background: var(--box-title-bg);
+  border: 1px solid var(--box-border);
+  border-bottom: none;
+  font-size: 13px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.settings-label {
+  color: var(--accent-dim);
+  user-select: none;
+}
+
+.settings-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.settings-option:hover {
+  color: var(--accent);
+}
+
+.settings-option input {
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .wrap {
+    padding: 0.75rem;
+  }
+}
+
+section {
+  --box-pad-y: 8px;
+  --box-pad-x: 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--box-border);
+  padding: var(--box-pad-y) var(--box-pad-x);
+  margin-bottom: 0;
+}
+
+.side-col section {
+  --box-pad-y: 6px;
+  --box-pad-x: 8px;
+}
+
+/* showcase gets more vertical room; children stretch
+   to fill the section's full height */
+#showcase {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+#showcase .showcase-entry {
+  flex: 1;
+}
+
+h2.section-title {
+  margin: 0 0 8px;
+  padding: 0;
+  font-size: 0.95rem;
+  background: none;
+  color: var(--accent);
+}
+
+h2.section-title::before {
+  content: '☾ ';
+}
+
+h2.welcome-title::before {
+  content: '';
+}
+
+/* marquee used as a section separator */
+.section-marquee {
+  margin: 4px 0;
+}
+
+/* graphic ad separators: full-width boards between sections */
+.ad-sep {
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--box-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+/* content sits above the absolutely-positioned art layer */
+.ad-sep > * {
+  position: relative;
+}
+
+.ad-sep-label {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  user-select: none;
+}
+
+.ad-sep-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(13px, 3.5vw, 21px);
+  line-height: 1.4;
+  color: #fff;
+}
+
+.ad-sep-dates {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ad-sep-tag {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ad-art {
+  position: absolute;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  transform: translateY(-50%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.ad-art-left { left: 5%; }
+.ad-art-right { right: 5%; }
+
+.ad-cta {
+  margin-top: 5px;
+  padding: 6px 12px;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  background: transparent;
+}
+
+/* valorant: dark slate + red slash angles */
+.ad-valorant {
+  border-color: #ff4655;
+  background:
+    linear-gradient(115deg, transparent 0 62%, rgba(255, 70, 85, 0.22) 62%),
+    linear-gradient(295deg, transparent 0 82%, rgba(255, 70, 85, 0.45) 82%),
+    repeating-linear-gradient(115deg, transparent 0 34px, rgba(236, 232, 225, 0.05) 34px 36px),
+    linear-gradient(180deg, #0f1923, #16273a);
+}
+
+.ad-valorant .ad-sep-title {
+  color: #ece8e1;
+  text-shadow: 2px 2px 0 #ff4655;
+}
+
+.ad-valorant .ad-cta { color: #ff4655; border-color: #ff4655; }
+.ad-valorant .ad-cta:hover { background: #ff4655; color: #0f1923; }
+
+/* world cup: pitch stripes + center-circle arc */
+.ad-worldcup {
+  border-color: #2d8a50;
+  background:
+    radial-gradient(circle at 50% 135%, transparent 0 88px, rgba(255, 255, 255, 0.16) 88px 92px, transparent 92px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 44px, transparent 44px 88px),
+    linear-gradient(180deg, #0d6438, #093f24);
+}
+
+.ad-worldcup .ad-sep-title { text-shadow: 2px 2px 0 #b48a2c; }
+.ad-worldcup .ad-cta { color: #fff; border-color: #fff; }
+.ad-worldcup .ad-cta:hover { background: #fff; color: #0d6438; }
+
+/* discord: blurple wash + diagonal weave */
+.ad-discord {
+  border-color: #5865f2;
+  background:
+    radial-gradient(150px 80px at 10% 115%, rgba(255, 255, 255, 0.13), transparent 70%),
+    radial-gradient(170px 90px at 90% -15%, rgba(0, 0, 0, 0.22), transparent 70%),
+    repeating-linear-gradient(135deg, transparent 0 26px, rgba(255, 255, 255, 0.05) 26px 28px),
+    linear-gradient(180deg, #5865f2, #434fd0);
+}
+
+.ad-discord .ad-sep-title { text-shadow: 2px 2px 0 #2f3aa8; }
+.ad-discord .ad-cta { color: #fff; border-color: #fff; }
+.ad-discord .ad-cta:hover { background: #fff; color: #5865f2; }
+
+/* ============================================
+   dark mode layout overrides
+   ============================================ */
+
+[data-theme="dark"] .site-title {
+  text-shadow:
+    0 0 4px var(--accent),
+    0 0 14px rgba(125, 249, 255, 0.5);
+}
+
+[data-theme="dark"] .marquee {
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--accent-dim);
+}
+
+[data-theme="dark"] section {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] .counter span {
+  background: #000;
+  color: var(--ok);
+}
+
+[data-theme="dark"] .rain-toggle,
+[data-theme="dark"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+
+

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="placeholder image">
+  <rect width="320" height="200" fill="#101018"/>
+  <rect x="1" y="1" width="318" height="198" fill="none" stroke="#1d5054" stroke-width="2"/>
+  <circle cx="250" cy="48" r="18" fill="none" stroke="#7df9ff" stroke-width="2"/>
+  <path d="M256 34 a18 18 0 1 0 8 26 a14 14 0 1 1 -8 -26 z" fill="#7df9ff" opacity="0.6"/>
+  <polyline points="30,160 95,100 140,138 200,82 290,160" fill="none" stroke="#3ec6cc" stroke-width="2"/>
+  <text x="160" y="110" text-anchor="middle" fill="#8a8a96" font-family="monospace" font-size="13">[ your photo here ]</text>
+  <text x="160" y="128" text-anchor="middle" fill="#44445c" font-family="monospace" font-size="10">320 x 200</text>
+</svg>
