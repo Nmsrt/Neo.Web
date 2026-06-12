@@ -11,7 +11,7 @@
 
 .hero-welcome {
   font-family: var(--font-pixel);
-  font-size: 0.72rem;
+  font-size: 1rem;
   color: var(--accent);
   letter-spacing: 0.08em;
   margin: 0.25rem 0 0.6rem;
@@ -225,8 +225,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-family: 'VT323', monospace;
-  font-size: 21px;
+  font-family: var(--font-body);
+  font-size: 17px;
   line-height: 1.2;
   color: #d4e6d4;
 }
@@ -331,7 +331,7 @@
   width: 88px;
   height: 31px;
   font-family: var(--font-pixel);
-  font-size: 7px;
+  font-size: 10px;
   text-align: center;
   background: var(--bg-panel-alt);
   border: 1px solid var(--border-bright);

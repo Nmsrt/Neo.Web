@@ -3,15 +3,17 @@
    animations
    ============================================ */
 
+/* pixel fonts from int10h.org "Ultimate Oldschool PC Font Pack"
+   (CC BY-SA 4.0) — same files dimden.dev serves */
 @font-face {
   font-family: "NEC_APC3";
-  src: url("/fonts/pixelfonts/Web437_NEC_APC3_8x16.woff") format("woff");
+  src: url("../fonts/pixelfonts/Web437_NEC_APC3_8x16.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "NEC_APC3";
-  src: url("/fonts/pixelfonts/Web437_Nix8810_M16.woff") format("woff");
+  src: url("../fonts/pixelfonts/Web437_Nix8810_M16.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
@@ -41,7 +43,8 @@
 
   --rain-color: rgba(158, 27, 50, 0.14);
 
-  --font-pixel: 'Press Start 2P', monospace;
+  /* dimden.dev stack everywhere — headings included */
+  --font-pixel: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;
   --font-body: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;
 
   --page-max: 980px;
@@ -75,6 +78,8 @@ body {
   font-size: 16px;
   line-height: 1.35;
   image-rendering: pixelated;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
 }
 
 /* light mode: aged map — faint topographic contour rings over parchment.
@@ -110,14 +115,14 @@ body::after {
 h1, h2, h3 {
   font-family: var(--font-pixel);
   color: var(--accent);
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.5;
   text-shadow: none;
 }
 
-h1 { font-size: 1.4rem; }
-h2 { font-size: 1rem; margin: 0 0 1rem; }
-h3 { font-size: 0.8rem; color: var(--accent); }
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.1rem; margin: 0 0 1rem; }
+h3 { font-size: 1rem; color: var(--accent); }
 
 h2.section-title::before {
   content: '☾ ';

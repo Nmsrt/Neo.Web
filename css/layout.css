@@ -81,7 +81,7 @@
 
 .nav-box a {
   font-family: var(--font-pixel);
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .online-dot {
@@ -102,7 +102,7 @@
   border: 1px solid var(--border-bright);
   color: var(--accent);
   font-family: var(--font-pixel);
-  font-size: 10px;
+  font-size: 13px;
   padding: 3px 4px;
 }
 
@@ -244,7 +244,7 @@ section {
 h2.section-title {
   margin: 0 0 8px;
   padding: 0;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   background: none;
   color: var(--accent);
 }
@@ -294,14 +294,15 @@ h2.welcome-title::before {
 
 .ad-sep-title {
   font-family: var(--font-pixel);
-  font-size: clamp(13px, 3.5vw, 21px);
+  font-weight: bold;
+  font-size: clamp(16px, 4.5vw, 26px);
   line-height: 1.4;
   color: #fff;
 }
 
 .ad-sep-dates {
   font-family: var(--font-pixel);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -328,7 +329,7 @@ h2.welcome-title::before {
   margin-top: 5px;
   padding: 6px 12px;
   font-family: var(--font-pixel);
-  font-size: 8px;
+  font-size: 12px;
   text-decoration: none;
   border: 1px solid currentColor;
   background: transparent;

@@ -18,16 +18,103 @@ body {
   font-size: clamp(2.2rem, 9vw, 4.5rem);
 }
 
-h1 { font-size: clamp(1.1rem, 3vw, 1.4rem); }
-h2 { font-size: clamp(0.85rem, 2.5vw, 1rem); }
+h1 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
+h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
 
 .page-404 .site-title {
   font-size: clamp(1.8rem, 10vw, 2.6rem);
 }
 
+/* ---- mobile hamburger menu (injected by js/menu.js) ---- */
+
+/* desktop / no-JS: button and backdrop don't exist visually */
+.menu-toggle,
+.menu-backdrop {
+  display: none;
+}
+
 /* ---- tablet and below (≤ 768px) ---- */
 
 @media (max-width: 768px) {
+  /* hamburger button: top-right over the header */
+  .has-mobile-menu .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 45;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 22px;
+    line-height: 1;
+    background: var(--box-title-bg);
+    color: var(--accent);
+    border: 1px solid var(--box-border);
+    cursor: pointer;
+  }
+
+  .has-mobile-menu .menu-toggle::before {
+    content: '☰';
+  }
+
+  .menu-open .menu-toggle::before {
+    content: '✕';
+  }
+
+  /* sidebar becomes a slide-out panel; original section
+     styling inside is untouched */
+  body.has-mobile-menu .side-col {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    width: min(300px, 86vw);
+    margin: 0;
+    padding: 60px 10px 16px;
+    overflow-y: auto;
+    background: var(--bg);
+    border-left: 1px solid var(--box-border);
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.3);
+    transform: translateX(102%);
+  }
+
+  /* transition only after first paint (menu-ready), so the
+     panel doesn't flash/slide on page load */
+  body.menu-ready .side-col {
+    transition: transform 0.28s ease;
+  }
+
+  body.has-mobile-menu .side-col section {
+    margin-bottom: 8px;
+  }
+
+  body.menu-open .side-col {
+    transform: translateX(0);
+  }
+
+  .has-mobile-menu .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .menu-ready .menu-backdrop {
+    transition: opacity 0.28s ease;
+  }
+
+  .menu-open .menu-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
   .wrap {
     padding: 8px;
   }
@@ -105,6 +192,12 @@ h2 { font-size: clamp(0.85rem, 2.5vw, 1rem); }
   .embed-code {
     font-size: 13px;
   }
+
+  /* sections hug their content on mobile — no desktop
+     min-height stretching empty boxes */
+  #showcase {
+    min-height: 0;
+  }
 }
 
 /* ---- mobile (≤ 480px) ---- */
@@ -114,17 +207,30 @@ h2 { font-size: clamp(0.85rem, 2.5vw, 1rem); }
     padding: 6px;
   }
 
-  /* each major section fills the viewport; content
-     vertically centered, grows past 100svh if taller */
+  /* sections hug their content: height comes from the
+     content itself, no viewport-height stretching */
   .main-col > section {
-    min-height: 100vh;  /* fallback */
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 0;
+    height: auto;
   }
 
-  /* sidebar cards go single column */
+  /* blog: tighter skeleton slots, less dead space */
+  .blog-slot {
+    min-height: 22px;
+  }
+
+  .blog-list li {
+    margin: 3px 0;
+    padding-bottom: 3px;
+  }
+
+  /* status: tighter terminal board */
+  .status-board {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  /* sidebar cards go single column (no-JS fallback) */
   .side-col {
     grid-template-columns: 1fr;
   }
@@ -133,21 +239,53 @@ h2 { font-size: clamp(0.85rem, 2.5vw, 1rem); }
     font-size: 13px;
   }
 
+  /* compact landing: banner + hero + marquee should fit
+     a single mobile screen on first load */
   .banner {
-    padding: 10px 6px;
+    padding: 6px 6px 2px;
   }
 
-  /* hero avatar: float dies inside flex section — center it */
+  .site-title {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  .hero {
+    font-size: 14px;
+  }
+
+  .hero p {
+    margin: 0 0 0.55rem;
+    line-height: 1.4;
+  }
+
+  .hero .welcome-title {
+    margin-bottom: 6px;
+  }
+
+  .hobby-list {
+    margin: 0 0 0.55rem;
+  }
+
+  .hobby-list li {
+    margin: 0 0 0.25rem;
+  }
+
+  .section-marquee {
+    margin: 6px 0;
+  }
+
+  /* hero avatar: centered, smaller so the fold fits */
   .hero .avatar {
     float: none;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 10px;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 8px;
+    display: block;
   }
 
   .hero .avatar img {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
   }
 
   .counter span {
@@ -199,5 +337,14 @@ h2 { font-size: clamp(0.85rem, 2.5vw, 1rem); }
   .settings-option input {
     width: 20px;
     height: 20px;
+  }
+}
+
+/* ---- reduced motion: menu snaps instead of sliding ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .side-col,
+  .menu-backdrop {
+    transition: none;
   }
 }
