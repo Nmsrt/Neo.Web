@@ -263,14 +263,6 @@ h2.section-title {
   color: var(--accent);
 }
 
-h2.section-title::before {
-  content: '☾ ';
-}
-
-h2.welcome-title::before {
-  content: '';
-}
-
 /* marquee used as a section separator */
 .section-marquee {
   margin: 4px 0;
