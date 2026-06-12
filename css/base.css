@@ -54,7 +54,7 @@
 
   /* dimden.dev stack everywhere — headings included */
   --font-pixel: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;
-  --font-body: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;
+  --font-body: "NEC_APC3", "RussianGothic", "MS UI Gothic", Tahoma;
 
   --page-max: 980px;
   --side-col-w: 190px;
