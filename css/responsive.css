@@ -324,9 +324,15 @@ h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
   /* ad separators: compact board, content stays centered,
      art fades to background */
   .ad-sep {
-    padding: 5px 10px 6px;
+    padding: 4px 10px;
     margin: 6px 0;
     gap: 1px;
+    height: 80px;
+  }
+
+  /* corner label collides with centered titles at phone widths */
+  .ad-sep-label {
+    display: none;
   }
 
   .ad-sep-title {

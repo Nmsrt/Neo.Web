@@ -277,16 +277,19 @@ h2.welcome-title::before {
 }
 
 /* graphic ad separators: full-width boards between sections */
+/* uniform board height; content centered vertically */
 .ad-sep {
   position: relative;
   overflow: hidden;
   margin: 8px 0;
-  padding: 8px 14px;
+  padding: 6px 14px;
+  height: 92px;
   border: 1px solid var(--box-border);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  justify-content: center;
+  gap: 1px;
   text-align: center;
 }
 
