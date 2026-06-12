@@ -50,6 +50,7 @@
   --box-title-bg: rgba(245, 240, 232, 0.97);
 
   --rain-color: rgba(158, 27, 50, 0.14);
+  --meteor-color: rgba(122, 12, 28, 0.8); /* blood, light mode */
 
   /* dimden.dev stack everywhere — headings included */
   --font-pixel: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;
@@ -254,6 +255,7 @@ code {
   --box-border: #1d5054;
   --box-title-bg: rgba(7, 24, 28, 0.75);
   --rain-color: rgba(125, 249, 255, 0.18);
+  --meteor-color: rgba(190, 250, 255, 0.9);
 }
 
 /* dark mode: deep space starfield (staggered tile sizes so no grid reads) */
