@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
-  <!-- pixel slime placeholder avatar -->
-  <rect width="16" height="16" fill="#0a0a0f"/>
+  <!-- pixel slime placeholder avatar (transparent background) -->
   <!-- body -->
   <rect x="5" y="4" width="6" height="1" fill="#3ec66f"/>
   <rect x="4" y="5" width="8" height="1" fill="#3ec66f"/>

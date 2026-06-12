@@ -11,7 +11,7 @@
 /* ---- fluid typography (all sizes) ---- */
 
 body {
-  font-size: clamp(15px, 1vw + 11px, 17px);
+  font-size: clamp(13px, 1vw + 9px, 15px);
 }
 
 .site-title {
@@ -19,7 +19,7 @@ body {
 }
 
 h1 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
-h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
+h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
 
 .page-404 .site-title {
   font-size: clamp(1.8rem, 10vw, 2.6rem);
@@ -81,6 +81,15 @@ h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
     border-left: 1px solid var(--box-border);
     box-shadow: -6px 0 18px rgba(0, 0, 0, 0.3);
     transform: translateX(102%);
+    max-height: 100vh;  /* fallback */
+    max-height: 100svh;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* page behind the open panel doesn't scroll */
+  body.menu-open {
+    overflow: hidden;
   }
 
   /* transition only after first paint (menu-ready), so the
@@ -147,13 +156,17 @@ h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
     max-width: 320px;
   }
 
-  /* touch-friendly tap targets (≥ 44px) */
+  /* touch-friendly tap targets (≥ 44px); star marker stays
+     inline with the link like on desktop */
   .nav-box li {
     margin: 0;
+    display: flex;
+    align-items: center;
   }
 
   .nav-box a {
     display: block;
+    flex: 1;
     padding: 13px 8px;
   }
 
@@ -242,7 +255,7 @@ h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
   /* compact landing: banner + hero + marquee should fit
      a single mobile screen on first load */
   .banner {
-    padding: 6px 6px 2px;
+    padding: 0 6px;
   }
 
   .site-title {
@@ -250,12 +263,19 @@ h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
   }
 
   .hero {
-    font-size: 14px;
+    font-size: 13px;
   }
 
-  .hero p {
-    margin: 0 0 0.55rem;
-    line-height: 1.4;
+  /* paragraphs breathe a bit more on small screens */
+  .hero p,
+  .main-col section p {
+    margin: 0 0 0.8rem;
+    line-height: 1.45;
+  }
+
+  .main-col section p.tiny,
+  .status-board p {
+    margin: 0;
   }
 
   .hero .welcome-title {
@@ -274,18 +294,13 @@ h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
     margin: 6px 0;
   }
 
-  /* hero avatar: centered, smaller so the fold fits */
+  /* hero avatar: centered with clear breathing room */
   .hero .avatar {
     float: none;
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 8px;
+    width: 72px;
+    height: 72px;
+    margin: 6px auto 14px;
     display: block;
-  }
-
-  .hero .avatar img {
-    width: 64px;
-    height: 64px;
   }
 
   .counter span {
@@ -306,15 +321,31 @@ h2 { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
     padding: 10px 6px 10px 0;
   }
 
-  /* ad separators: tighter board, art fades to background */
+  /* ad separators: compact board, content stays centered,
+     art fades to background */
   .ad-sep {
-    padding: 12px 10px;
+    padding: 5px 10px 6px;
+    margin: 6px 0;
+    gap: 1px;
+  }
+
+  .ad-sep-title {
+    line-height: 1.2;
+  }
+
+  .ad-sep-tag {
+    font-size: 13px;
+  }
+
+  .ad-cta {
+    margin-top: 2px;
+    padding: 3px 8px;
   }
 
   .ad-art {
-    width: 44px;
-    height: 44px;
-    opacity: 0.18;
+    width: 40px;
+    height: 40px;
+    opacity: 0.15;
   }
 
   .showcase-img {

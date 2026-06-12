@@ -4,6 +4,14 @@
   document.documentElement.setAttribute('data-theme', t);
 }());
 
+// keep the browser UI (address bar) color in sync with the theme
+function syncThemeColor() {
+  var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', dark ? '#0a0a0f' : '#f5f0e8');
+}
+syncThemeColor();
+
 document.addEventListener('DOMContentLoaded', function () {
   var btn = document.getElementById('theme-toggle');
   var box = document.getElementById('setting-theme');
@@ -17,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var dark = isDark();
     if (btn) btn.textContent = dark ? '☀ light' : '☾ dark';
     if (box) box.checked = dark;
+    syncThemeColor();
   }
 
   function setTheme(next) {

@@ -3,26 +3,32 @@
    section panels, responsive
    ============================================ */
 
+/* no z-index here: it would trap the sidebar panel's z-index in a
+   stacking context below the menu backdrop. position:relative alone
+   keeps .wrap painting above the fixed rain canvas (z 0). */
 .wrap {
   max-width: var(--page-max);
   margin: 0 auto;
   padding: 6px;
   position: relative;
-  z-index: 1;
 }
 
 .banner {
   text-align: center;
-  padding: 14px 8px;
+  padding: 0 8px;
   margin-bottom: 6px;
   border: none;
   background: transparent;
 }
 
+/* Orbitron: geometric sci-fi display face for the title only;
+   falls back to the pixel stack while loading */
 .site-title {
   margin: 0;
+  font-family: 'Orbitron', var(--font-pixel);
+  font-weight: 900;
   font-size: 4.5rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.01em;
   text-shadow: none;
 }
 
@@ -32,7 +38,7 @@
   border: 1px solid var(--box-border);
   background: var(--bg-panel);
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-dim);
   white-space: nowrap;
 }
@@ -81,7 +87,7 @@
 
 .nav-box a {
   font-family: var(--font-pixel);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .online-dot {
@@ -102,13 +108,13 @@
   border: 1px solid var(--border-bright);
   color: var(--accent);
   font-family: var(--font-pixel);
-  font-size: 13px;
+  font-size: 12px;
   padding: 3px 4px;
 }
 
 .tiny {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-dim);
 }
 
@@ -177,7 +183,7 @@
   background: var(--box-title-bg);
   border: 1px solid var(--box-border);
   border-bottom: none;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-dim);
   white-space: nowrap;
 }
@@ -229,6 +235,11 @@ section {
   --box-pad-x: 8px;
 }
 
+/* narrow sidebar: smaller titles so Pixel NES doesn't wrap */
+.side-col h2.section-title {
+  font-size: 1.05rem;
+}
+
 /* showcase gets more vertical room; children stretch
    to fill the section's full height */
 #showcase {
@@ -244,7 +255,10 @@ section {
 h2.section-title {
   margin: 0 0 8px;
   padding: 0;
-  font-size: 1.05rem;
+  font-family: "Pixel NES", var(--font-pixel);
+  font-weight: normal; /* Pixel NES has no bold face */
+  font-size: 1.6rem;
+  text-transform: uppercase;
   background: none;
   color: var(--accent);
 }
@@ -266,13 +280,13 @@ h2.welcome-title::before {
 .ad-sep {
   position: relative;
   overflow: hidden;
-  margin: 10px 0;
-  padding: 14px 16px;
+  margin: 8px 0;
+  padding: 8px 14px;
   border: 1px solid var(--box-border);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   text-align: center;
 }
 
@@ -295,20 +309,20 @@ h2.welcome-title::before {
 .ad-sep-title {
   font-family: var(--font-pixel);
   font-weight: bold;
-  font-size: clamp(16px, 4.5vw, 26px);
+  font-size: clamp(15px, 4vw, 22px);
   line-height: 1.4;
   color: #fff;
 }
 
 .ad-sep-dates {
   font-family: var(--font-pixel);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .ad-sep-tag {
-  font-size: 15px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -326,10 +340,10 @@ h2.welcome-title::before {
 .ad-art-right { right: 5%; }
 
 .ad-cta {
-  margin-top: 5px;
-  padding: 6px 12px;
+  margin-top: 3px;
+  padding: 4px 10px;
   font-family: var(--font-pixel);
-  font-size: 12px;
+  font-size: 11px;
   text-decoration: none;
   border: 1px solid currentColor;
   background: transparent;
