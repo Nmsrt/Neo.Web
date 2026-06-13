@@ -181,6 +181,9 @@ h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
     transform: none;
     justify-content: center;
     gap: 18px;
+    background: var(--bg);
+    border-left: none;
+    border-right: none;
   }
 
   .settings-option {
@@ -263,7 +266,7 @@ h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
   }
 
   .hero {
-    font-size: 13px;
+    font-size: clamp(13px, 2vh, 18px);
   }
 
   /* paragraphs breathe a bit more on small screens */
@@ -279,7 +282,7 @@ h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
   }
 
   .hero .welcome-title {
-    margin-bottom: 6px;
+    margin-bottom: 16px;
   }
 
   .hobby-list {
@@ -291,7 +294,9 @@ h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
   }
 
   .section-marquee {
-    margin: 6px 0;
+    margin: 6px -6px;
+    border-left: none;
+    border-right: none;
   }
 
   /* hero avatar: centered with clear breathing room */
@@ -356,6 +361,18 @@ h2 { font-size: clamp(1.35rem, 3.5vw, 1.6rem); }
 
   .showcase-img {
     max-width: none;
+  }
+
+  /* hero + marquee fill between banner and settings bar */
+  .above-fold {
+    min-height: calc(100vh - 112px);
+    min-height: calc(100dvh - 112px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .above-fold section.hero {
+    flex: 1;
   }
 }
 
