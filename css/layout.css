@@ -97,6 +97,23 @@
   animation: blink 2s steps(1) infinite;
 }
 
+.weather-time {
+  margin: 2px 0 0;
+  font-size: 15px;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+.weather-temp {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+.weather-date,
+.weather-cond {
+  margin: 2px 0 0;
+}
+
 .counter {
   display: flex;
   gap: 2px;

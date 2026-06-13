@@ -127,6 +127,43 @@
   margin: 0.6rem 0 0.3rem;
 }
 
+/* skill tag grid */
+.skill-group {
+  margin-bottom: 14px;
+}
+
+.skill-group-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0 0 6px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--border-bright);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  font-size: 0.78rem;
+  border: 1px solid var(--border-bright);
+  background: var(--bg-panel-alt);
+  color: var(--text);
+  line-height: 1.4;
+  transition: border-color 0.1s, color 0.1s;
+}
+
+.skill-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* experience */
 .exp-list {
   list-style: none;
@@ -159,13 +196,8 @@
   font-size: 0.8rem;
 }
 
-/* skills */
-.skill-list {
-  color: var(--text);
-  font-size: 0.85rem;
-  margin: 0 0 0.4rem;
-  letter-spacing: 0.02em;
-}
+/* skills (legacy, unused) */
+.skill-list { display: none; }
 
 /* contact */
 .contact-table {
@@ -202,6 +234,12 @@
 .blog-list .date {
   color: var(--text-dim);
   font-size: 0.8rem;
+}
+
+.blog-empty {
+  margin: 4px 0;
+  color: var(--text-dim);
+  font-size: 0.85rem;
 }
 
 /* empty post slots: skeleton bars, no written content */
@@ -371,10 +409,6 @@ a.btn-88x31:hover {
   display: block;
 }
 
-.guestbook-line {
-  margin-top: 8px;
-}
-
 .embed-code {
   display: block;
   width: 100%;
@@ -386,27 +420,6 @@ a.btn-88x31:hover {
   font-size: 10px;
   resize: none;
   cursor: pointer;
-}
-
-/* guestbook */
-.gb-entry {
-  border: 1px solid var(--border);
-  background: var(--bg-panel-alt);
-  padding: 5px 8px;
-  margin-bottom: 6px;
-}
-
-.gb-entry p {
-  margin: 0 0 0.3rem;
-}
-
-.gb-meta {
-  color: var(--accent-dim);
-  font-size: 11px;
-}
-
-.gb-meta::before {
-  content: '☾ ';
 }
 
 /* 404 */
@@ -466,10 +479,6 @@ footer .webring {
    ============================================ */
 
 [data-theme="dark"] .project {
-  background: rgba(0, 0, 0, 0.45);
-}
-
-[data-theme="dark"] .gb-entry {
   background: rgba(0, 0, 0, 0.45);
 }
 

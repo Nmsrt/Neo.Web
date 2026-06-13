@@ -38,7 +38,7 @@
               This is my little website I created on June 11, 2026.
             </p>
             <p>
-              Programming is my thing..... building small stuff for the internet
+              Programming is my thing..... building small stuff for fun
               and tinkering with it until it feels just right. If you want the
               serious version of me, my professional site is
               <a href="https://github.com/Nmsrt/Professional-Portfolio">here</a>.
@@ -74,14 +74,7 @@
           <!-- BLOG -->
           <section id="blog">
             <h2 class="section-title">✎ Blog</h2>
-            <ul class="blog-list" aria-label="blog posts coming soon">
-              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
-              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
-              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
-              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
-              <li class="blog-slot" aria-hidden="true"><span class="slot-line slot-title"></span><span class="slot-line slot-date"></span></li>
-            </ul>
-            <p class="tiny">blog is currently empty — no posts yet, check back soon!</p>
+            <p class="blog-empty">✎ content coming soon — check back later!</p>
           </section>
 
           <!-- ad separator: valorant -->
@@ -106,7 +99,6 @@
               <ul class="status-list">
                 <li class="status-item"><span class="status-tag ok">[ OK ]</span> site</li>
                 <li class="status-item"><span class="status-tag ok">[ OK ]</span> server</li>
-                <li class="status-item"><span class="status-tag ok">[ OK ]</span> guestbook</li>
                 <li class="status-item"><span class="status-tag warn">[ -- ]</span> webring</li>
               </ul>
             </div>
@@ -178,7 +170,6 @@
                 <li><a href="pages/skills.html">Skills</a></li>
                 <li><a href="pages/contact.html">Contact</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="guestbook.html">Guestbook</a></li>
                 <li><a href="https://github.com/Nmsrt">GitHub</a></li>
               </ul>
             </nav>
@@ -187,6 +178,14 @@
           <section class="online-box">
             <h2 class="section-title">● Status</h2>
             <p class="online-dot">● ONLINE</p>
+          </section>
+
+          <section class="weather-box">
+            <h2 class="section-title">⛅ Manila</h2>
+            <p class="weather-time" id="manila-time">--:--:--</p>
+            <p class="weather-date tiny" id="manila-date">···</p>
+            <p class="weather-temp" id="manila-temp">···</p>
+            <p class="weather-cond tiny" id="manila-cond">loading…</p>
           </section>
 
           <section class="counter-box">
@@ -246,5 +245,6 @@
     <script src="js/counter.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/avatar.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
