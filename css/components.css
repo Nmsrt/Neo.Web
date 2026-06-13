@@ -448,9 +448,9 @@ footer {
   width: 100%;
   max-width: 900px;
   margin: 6px auto 0;
-  padding: 6px;
-  border: 1px solid var(--box-border);
-  background: var(--bg-panel);
+  padding: 8px 6px;
+  border: none;
+  background: transparent;
   color: var(--text-dim);
   font-size: 12px;
   text-align: center;
@@ -458,10 +458,6 @@ footer {
 
 footer p {
   margin: 2px 0;
-}
-
-footer .webring {
-  color: var(--accent-dim);
 }
 
 /* rain canvas */
@@ -497,9 +493,6 @@ footer .webring {
   color: var(--accent-dim);
 }
 
-[data-theme="dark"] footer {
-  background: rgba(0, 0, 0, 0.7);
-}
 
 [data-theme="dark"] .ascii-404 {
   text-shadow: 0 0 4px rgba(125, 249, 255, 0.25);
