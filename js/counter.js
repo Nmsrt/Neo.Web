@@ -3,7 +3,7 @@
 // once; falls back to a local count if the API is unreachable.
 (function () {
   var NS = 'neodev-neocities';
-  var KEY = 'visits';
+  var KEY = 'visits-v2';
 
   var digits = document.querySelectorAll('.counter span');
   var label = document.querySelector('.counter-box .tiny');

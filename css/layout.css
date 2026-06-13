@@ -11,6 +11,14 @@
   margin: 0 auto;
   padding: 6px;
   position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap .columns {
+  flex: 1;
 }
 
 .banner {
@@ -302,7 +310,16 @@ h2.section-title {
   text-align: center;
 }
 
-/* content sits above the absolutely-positioned art layer */
+/* dark scrim over photo so text stays readable */
+.ad-sep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.60) 100%);
+  pointer-events: none;
+}
+
+/* content sits above the scrim */
 .ad-sep > * {
   position: relative;
 }
@@ -314,7 +331,8 @@ h2.section-title {
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
   user-select: none;
 }
 
@@ -324,18 +342,21 @@ h2.section-title {
   font-size: clamp(15px, 4vw, 22px);
   line-height: 1.4;
   color: #fff;
+  text-shadow: 0 1px 10px rgba(0,0,0,1), 0 0 3px rgba(0,0,0,0.9);
 }
 
 .ad-sep-dates {
   font-family: var(--font-pixel);
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
 }
 
 .ad-sep-tag {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
 }
 
 .ad-art {
@@ -358,51 +379,44 @@ h2.section-title {
   font-size: 11px;
   text-decoration: none;
   border: 1px solid currentColor;
-  background: transparent;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-/* valorant: dark slate + red slash angles */
+/* valorant */
 .ad-valorant {
   border-color: #ff4655;
-  background:
-    linear-gradient(115deg, transparent 0 62%, rgba(255, 70, 85, 0.22) 62%),
-    linear-gradient(295deg, transparent 0 82%, rgba(255, 70, 85, 0.45) 82%),
-    repeating-linear-gradient(115deg, transparent 0 34px, rgba(236, 232, 225, 0.05) 34px 36px),
-    linear-gradient(180deg, #0f1923, #16273a);
+  background: url('../assets/ad-valorant-bg.jpg') center / cover no-repeat;
 }
 
 .ad-valorant .ad-sep-title {
   color: #ece8e1;
-  text-shadow: 2px 2px 0 #ff4655;
 }
 
 .ad-valorant .ad-cta { color: #ff4655; border-color: #ff4655; }
 .ad-valorant .ad-cta:hover { background: #ff4655; color: #0f1923; }
 
-/* world cup: pitch stripes + center-circle arc */
+/* world cup */
 .ad-worldcup {
   border-color: #2d8a50;
-  background:
-    radial-gradient(circle at 50% 135%, transparent 0 88px, rgba(255, 255, 255, 0.16) 88px 92px, transparent 92px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 44px, transparent 44px 88px),
-    linear-gradient(180deg, #0d6438, #093f24);
+  background: url('../assets/ad-worldcup-bg.jpg') center / cover no-repeat;
+  gap: 0;
 }
 
-.ad-worldcup .ad-sep-title { text-shadow: 2px 2px 0 #b48a2c; }
+.ad-worldcup .ad-sep-dates { font-size: 9px; }
+.ad-worldcup .ad-sep-tag { font-size: 11px; }
+.ad-worldcup .ad-cta { margin-top: 1px; padding: 2px 8px; }
+
 .ad-worldcup .ad-cta { color: #fff; border-color: #fff; }
 .ad-worldcup .ad-cta:hover { background: #fff; color: #0d6438; }
 
-/* discord: blurple wash + diagonal weave */
+/* discord */
 .ad-discord {
   border-color: #5865f2;
-  background:
-    radial-gradient(150px 80px at 10% 115%, rgba(255, 255, 255, 0.13), transparent 70%),
-    radial-gradient(170px 90px at 90% -15%, rgba(0, 0, 0, 0.22), transparent 70%),
-    repeating-linear-gradient(135deg, transparent 0 26px, rgba(255, 255, 255, 0.05) 26px 28px),
-    linear-gradient(180deg, #5865f2, #434fd0);
+  background: url('../assets/ad-discord-bg.jpg') center / cover no-repeat;
 }
 
-.ad-discord .ad-sep-title { text-shadow: 2px 2px 0 #2f3aa8; }
 .ad-discord .ad-cta { color: #fff; border-color: #fff; }
 .ad-discord .ad-cta:hover { background: #fff; color: #5865f2; }
 

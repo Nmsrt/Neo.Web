@@ -68,6 +68,7 @@ html {
   scrollbar-color: var(--accent-dim) var(--bg);
   /* match page bg so overscroll/safe-area never flashes white */
   background: var(--bg);
+  min-height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -83,6 +84,8 @@ html {
 body {
   margin: 0;
   padding-bottom: 34px; /* room for fixed settings bar */
+  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
