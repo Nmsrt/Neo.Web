@@ -94,9 +94,36 @@
             <p class="online-dot">● ONLINE</p>
           </section>
 
-          <section class="theme-box">
-            <h2 class="section-title">☾ Theme</h2>
-            <button class="theme-toggle" id="theme-toggle" type="button">☾ dark</button>
+          <section class="weather-box">
+            <h2 class="section-title">⛅ Manila</h2>
+            <p class="weather-time" id="manila-time">--:--:--</p>
+            <p class="weather-date tiny" id="manila-date">···</p>
+            <p class="weather-temp" id="manila-temp">···</p>
+            <p class="weather-cond tiny" id="manila-cond">loading…</p>
+          </section>
+
+          <section class="counter-box">
+            <h2 class="section-title">☺ Visitors</h2>
+            <div class="counter" aria-label="visitor counter">
+              <span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span>
+            </div>
+            <p class="tiny">counting…</p>
+          </section>
+
+          <section class="mybutton-box">
+            <h2 class="section-title">◆ My button</h2>
+            <img class="my-88x31" src="../assets/button.svg" width="88" height="31" alt="NEO.DEV 88x31 button" />
+            <p class="tiny">link me!</p>
+            <textarea class="embed-code" rows="3" readonly
+              onclick="this.select()">&lt;a href="https://neodev.neocities.org"&gt;&lt;img src="https://neodev.neocities.org/button.svg" width="88" height="31" alt="NEO.DEV"&gt;&lt;/a&gt;</textarea>
+          </section>
+
+          <section class="construction-box">
+            <h2 class="section-title">⚒ WIP</h2>
+            <div class="construction-bar" aria-hidden="true"></div>
+            <p class="tiny construction-text">🚧 UNDER CONSTRUCTION 🚧</p>
+            <div class="construction-bar" aria-hidden="true"></div>
+            <p class="tiny">last updated: 2026-06-13</p>
           </section>
 
           <section class="badge-box">
@@ -114,7 +141,21 @@
       </footer>
     </div>
 
+    <div class="settings-bar" role="group" aria-label="Site settings">
+      <span class="settings-label">settings:</span>
+      <label class="settings-option">
+        <input type="checkbox" id="setting-theme" />
+        <span>dark mode</span>
+      </label>
+      <label class="settings-option">
+        <input type="checkbox" id="setting-rain" />
+        <span>shooting stars</span>
+      </label>
+    </div>
+
     <script src="../js/rain.js"></script>
+    <script src="../js/counter.js"></script>
     <script src="../js/menu.js"></script>
+    <script src="../js/weather.js"></script>
   </body>
 </html>
