@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="theme-color" content="#0a0a0f" />
-    <meta name="description" content="Contact — NEO.DEV" />
-    <title>Contact — NEO.DEV</title>
+    <meta name="description" content="Instruments — NEO.DEV" />
+    <title>Instruments — NEO.DEV</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
   </head>
   <body>
     <canvas id="rain-canvas" aria-hidden="true"></canvas>
@@ -27,28 +28,11 @@
 
       <div class="columns">
         <main class="main-col">
-          <section id="contact">
-            <h2 class="section-title">✉ Contact</h2>
-            <table class="contact-table">
-              <tbody>
-                <tr>
-                  <td class="contact-label">Phone</td>
-                  <td><a href="tel:+639276646821">+63 927 664 6821</a></td>
-                </tr>
-                <tr>
-                  <td class="contact-label">Email</td>
-                  <td><a href="mailto:neo.monserrat@gmail.com">neo.monserrat@gmail.com</a></td>
-                </tr>
-                <tr>
-                  <td class="contact-label">LinkedIn</td>
-                  <td><a href="https://www.linkedin.com/in/antonio-enrique-monserrat-232ab6328">antonio-enrique-monserrat</a></td>
-                </tr>
-                <tr>
-                  <td class="contact-label">GitHub</td>
-                  <td><a href="https://github.com/NeoMonserrat">@NeoMonserrat</a></td>
-                </tr>
-              </tbody>
-            </table>
+          <section id="instruments">
+            <h2 class="section-title">▲ Instruments</h2>
+
+            <!-- items injected by instruments.js -->
+            <div id="instruments-root"></div>
           </section>
         </main>
 
@@ -105,7 +89,7 @@
             <div class="construction-bar" aria-hidden="true"></div>
             <p class="tiny construction-text">🚧 UNDER CONSTRUCTION 🚧</p>
             <div class="construction-bar" aria-hidden="true"></div>
-            <p class="tiny">last updated: 2026-06-13</p>
+            <p class="tiny">last updated: 2026-06-14</p>
           </section>
 
           <section class="badge-box">
@@ -135,6 +119,8 @@
       </label>
     </div>
 
+    <script src="../data/instruments-data.js"></script>
+    <script src="../js/instruments.js"></script>
     <script src="../js/rain.js"></script>
     <script src="../js/counter.js"></script>
     <script src="../js/menu.js"></script>
