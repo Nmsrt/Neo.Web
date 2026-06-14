@@ -31,10 +31,6 @@
   color: var(--text);
 }
 
-.game-title::before {
-  content: '☾ ';
-  color: var(--accent);
-}
 
 .game-notes {
   font-size: 0.78rem;
@@ -108,10 +104,6 @@
   color: var(--text);
 }
 
-.item-title::before {
-  content: '☾ ';
-  color: var(--accent);
-}
 
 .item-tag {
   display: inline-block;
