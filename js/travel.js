@@ -26,12 +26,11 @@
       card.href      = "#";
       card.setAttribute("aria-label", dest.name);
 
-      // Use first CDN photo as thumbnail
-      if (dest.images && dest.images.length > 0) {
+      if (dest.flag) {
         var thumb       = document.createElement("img");
-        thumb.className = "dest-thumb";
-        thumb.src       = dest.images[0];
-        thumb.alt       = dest.name;
+        thumb.className = "dest-thumb dest-flag";
+        thumb.src       = "../assets/flags/" + dest.flag;
+        thumb.alt       = dest.name + " flag";
         thumb.loading   = "lazy";
         thumb.decoding  = "async";
         card.appendChild(thumb);

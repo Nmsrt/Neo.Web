@@ -181,6 +181,13 @@
   border-bottom: 1px solid var(--border);
 }
 
+.dest-flag {
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 .dest-info {
   padding: 4px 7px 5px;
 }
