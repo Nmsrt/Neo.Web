@@ -21,9 +21,8 @@
     grid.className = "dest-grid";
 
     destinations.forEach(function (dest) {
-      var card       = document.createElement("a");
+      var card       = document.createElement("div");
       card.className = "dest-card";
-      card.href      = "#";
       card.setAttribute("aria-label", dest.name);
 
       if (dest.flag) {

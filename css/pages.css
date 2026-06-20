@@ -153,9 +153,9 @@
   border: 1px solid var(--border);
   background: var(--bg-panel-alt);
   overflow: hidden;
-  text-decoration: none;
   color: var(--text);
   display: block;
+  cursor: default;
   transition: border-color 0.1s;
 }
 
