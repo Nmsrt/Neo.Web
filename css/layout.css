@@ -414,11 +414,16 @@ h2.section-title {
 /* discord */
 .ad-discord {
   border-color: #5865f2;
-  background: url('../assets/ad-discord-bg.jpg') center / cover no-repeat;
+  background: linear-gradient(135deg, #1e2124 0%, #23272a 40%, #3b3f8c 72%, #5865f2 100%);
+  margin: 0;
+  height: auto;
+  padding: 18px 14px;
 }
 
-.ad-discord .ad-cta { color: #fff; border-color: #fff; }
-.ad-discord .ad-cta:hover { background: #fff; color: #5865f2; }
+.ad-discord .ad-sep-title { letter-spacing: 0.18em; }
+.ad-discord .ad-sep-dates { color: rgba(255,255,255,0.75); }
+.ad-discord .ad-cta { color: #fff; border-color: #5865f2; background: rgba(88,101,242,0.35); }
+.ad-discord .ad-cta:hover { background: #5865f2; color: #fff; border-color: #5865f2; }
 
 /* ============================================
    dark mode layout overrides
