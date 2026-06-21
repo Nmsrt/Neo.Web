@@ -157,6 +157,22 @@
   image-rendering: pixelated;
 }
 
+.gcash-box {
+  text-align: center;
+}
+
+.gcash-qr {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  margin: 6px auto 0;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 4px;
+  box-sizing: border-box;
+  image-rendering: auto;
+}
+
 .construction-box {
   text-align: center;
 }

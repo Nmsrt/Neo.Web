@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="theme-color" content="#0a0a0f" />
-    <meta name="description" content="Skills — NEO.DEV" />
-    <title>Skills — NEO.DEV</title>
+    <meta name="description" content="Wishlist — NEO.DEV" />
+    <title>Wishlist — NEO.DEV</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
   </head>
   <body>
     <canvas id="rain-canvas" aria-hidden="true"></canvas>
@@ -27,49 +28,17 @@
 
       <div class="columns">
         <main class="main-col">
-          <section id="skills">
-            <h2 class="section-title">⌨ Skills</h2>
+          <section id="wishlist">
+            <h2 class="section-title">▲ Wishlist</h2>
 
-            <div class="skill-group">
-              <p class="skill-group-label">Languages</p>
-              <div class="skill-tags">
-                <span class="skill-tag">C</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">SQL</span>
-              </div>
-            </div>
+            <!-- items injected by wishlist.js -->
+            <div id="wishlist-root"></div>
+          </section>
 
-            <div class="skill-group">
-              <p class="skill-group-label">Tools</p>
-              <div class="skill-tags">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">VS Code</span>
-                <span class="skill-tag">Android Studio</span>
-                <span class="skill-tag">Figma</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <p class="skill-group-label">Platforms &amp; SDKs</p>
-              <div class="skill-tags">
-                <span class="skill-tag">Meta Quest SDK</span>
-                <span class="skill-tag">Android</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <p class="skill-group-label">Concepts</p>
-              <div class="skill-tags">
-                <span class="skill-tag">OOP</span>
-                <span class="skill-tag">Data Structures</span>
-                <span class="skill-tag">Algorithms</span>
-                <span class="skill-tag">VR / XR Development</span>
-                <span class="skill-tag">UI Design</span>
-              </div>
-            </div>
+          <section id="gcash" class="gcash-box">
+            <h2 class="section-title">₱ Support</h2>
+            <p class="tiny">help fund a dream buy — scan w/ GCash</p>
+            <img class="gcash-qr" src="../assets/gcash-qr.jpg" alt="GCash QR code" loading="lazy" decoding="async" />
           </section>
         </main>
 
@@ -129,7 +98,7 @@
             <div class="construction-bar" aria-hidden="true"></div>
             <p class="tiny construction-text">🚧 UNDER CONSTRUCTION 🚧</p>
             <div class="construction-bar" aria-hidden="true"></div>
-            <p class="tiny">last updated: 2026-06-13</p>
+            <p class="tiny">last updated: 2026-06-21</p>
           </section>
 
           <section class="badge-box">
@@ -159,6 +128,8 @@
       </label>
     </div>
 
+    <script src="../data/wishlist-data.js"></script>
+    <script src="../js/wishlist.js"></script>
     <script src="../js/rain.js"></script>
     <script src="../js/counter.js"></script>
     <script src="../js/menu.js"></script>
