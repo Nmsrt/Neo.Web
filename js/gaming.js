@@ -36,22 +36,24 @@
           var badge       = document.createElement("span");
           badge.className = "platform-badge";
           badge.textContent = game.type;
+          badge.dataset.platform = game.type.toLowerCase();
           titleP.appendChild(badge);
         }
 
         info.appendChild(titleP);
 
+        row.appendChild(info);
+
         if (game.url) {
           var link       = document.createElement("a");
-          link.className = "project-link";
+          link.className = "game-link";
           link.href      = game.url;
           link.target    = "_blank";
           link.rel       = "noreferrer noopener";
-          link.textContent = "[site]";
-          info.appendChild(link);
+          link.textContent = "VISIT";
+          row.appendChild(link);
         }
 
-        row.appendChild(info);
         root.appendChild(row);
       });
     });

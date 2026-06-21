@@ -409,17 +409,42 @@ a.btn-88x31:hover {
   display: block;
 }
 
+.embed-wrap {
+  margin-top: 6px;
+}
+
 .embed-code {
   display: block;
   width: 100%;
-  margin-top: 6px;
   background: var(--bg-panel-alt);
   color: var(--text-dim);
   border: 1px solid var(--border-bright);
+  border-bottom: none;
   font-family: var(--font-body);
   font-size: 10px;
   resize: none;
   cursor: pointer;
+  box-sizing: border-box;
+}
+
+.embed-copy {
+  display: block;
+  width: 100%;
+  background: var(--bg-panel-alt);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: var(--font-body);
+  font-size: 10px;
+  cursor: pointer;
+  padding: 3px 0;
+  letter-spacing: 0.08em;
+  transition: background 0.1s, color 0.1s;
+  box-sizing: border-box;
+}
+
+.embed-copy:hover {
+  background: var(--accent);
+  color: var(--bg);
 }
 
 /* 404 */
@@ -491,6 +516,17 @@ footer p {
 [data-theme="dark"] .embed-code {
   background: #000;
   color: var(--accent-dim);
+}
+
+[data-theme="dark"] .embed-copy {
+  background: #000;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .embed-copy:hover {
+  background: var(--accent);
+  color: #000;
 }
 
 

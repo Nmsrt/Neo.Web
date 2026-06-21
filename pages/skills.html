@@ -117,8 +117,10 @@
             <h2 class="section-title">◆ My button</h2>
             <img class="my-88x31" src="../assets/button.svg" width="88" height="31" alt="NEO.DEV 88x31 button" />
             <p class="tiny">link me!</p>
-            <textarea class="embed-code" rows="3" readonly
-              onclick="this.select()">&lt;a href="https://neodev.neocities.org"&gt;&lt;img src="https://neodev.neocities.org/button.svg" width="88" height="31" alt="NEO.DEV"&gt;&lt;/a&gt;</textarea>
+            <div class="embed-wrap">
+              <textarea class="embed-code" rows="2" readonly onclick="this.select()">&lt;a href="https://neodev.neocities.org"&gt;&lt;img src="https://neodev.neocities.org/button.svg" width="88" height="31" alt="NEO.DEV"&gt;&lt;/a&gt;</textarea>
+              <button class="embed-copy" onclick="var t=this.previousElementSibling;t.select();var b=this;if(navigator.clipboard){navigator.clipboard.writeText(t.value).then(function(){b.textContent='COPIED!';setTimeout(function(){b.textContent='COPY'},1500)})}else{document.execCommand('copy');b.textContent='COPIED!';setTimeout(function(){b.textContent='COPY'},1500)}">COPY</button>
+            </div>
           </section>
 
           <section class="construction-box">

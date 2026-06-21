@@ -50,6 +50,36 @@
   font-weight: normal;
 }
 
+.game-link {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+
+.game-link:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.platform-badge[data-platform="riot"] {
+  background: #FF4655;
+  border-color: #FF4655;
+  color: #fff;
+}
+
+.platform-badge[data-platform="steam"] {
+  background: #1B2838;
+  border-color: #66C0F4;
+  color: #66C0F4;
+}
+
 .ign-table {
   width: 100%;
   font-size: 0.85rem;
