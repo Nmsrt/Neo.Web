@@ -38,32 +38,9 @@ window.WISHLIST_ITEMS = [
     image: { src: "../assets/wishlist/f50-ultimo-tango.png", alt: "Adidas F50 Ultimo Tango" },
   },
   {
-    id: "kits",
-    tag: "Football",
-    title: "Kits",
-    specs: [
-      { label: "Model", value: "Adidas (World Cup 2026 replica)" },
-      { label: "Japan", value: "Adidas Away Kit" },
-      { label: "Argentina", value: "Adidas Home / Away Kit" },
-    ],
-    image: { src: "../assets/wishlist/japan-away-kit.png", alt: "Japan World Cup 2026 Away Kit" },
-  },
-  {
     id: "ball",
     tag: "Football",
     title: "Ball",
-    specs: [{ label: "Model", value: "TBD" }],
-  },
-  {
-    id: "socks",
-    tag: "Football",
-    title: "Socks",
-    specs: [{ label: "Model", value: "TBD" }],
-  },
-  {
-    id: "headband",
-    tag: "Football",
-    title: "Headband",
     specs: [{ label: "Model", value: "TBD" }],
   },
 
